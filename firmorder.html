@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>确认订单</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	</head>
+	<body>
+		<a name="top"></a>
+		<header>
+			<div class="titleWrap">
+				<a href="javascript:void(0)" class="a-back">
+					<span class="cheek1">返回</span>
+				</a>
+				确认订单			
+			</div>
+			<script>
+				$(function(){
+					$(".a-back").click( function(){
+						window.history.back();
+					})
+				});
+			</script>
+		</header>
+		<div class="content ptop0">
+			<h2>收货人信息</h2>
+			<div class="con-ct radius shadow fo-con">
+				<a href="choose_reci.html">
+					<ul class="ct-list">
+						<li>
+							<p class="size12 height23">收件人：刘子佳</p>
+							<p class="size12 height23">手机号：18610089635</p>
+							<p class="size12 height23">地&nbsp;&nbsp;&nbsp;&nbsp;址：北京市 朝阳区 三环至四环 安定路1号国家奥林匹克中心体育场东看台三层南侧三层南侧 珍品网</p>
+						</li>
+					</ul>
+				</a>
+			</div>
+			<h2>支付方式</h2>
+			<div class="inp-ct radius shadow">
+				<ul class="ct-list">
+					<li>
+						<label for="working" class="ralabel"><input type="radio" name="dist-time" id="working" class="pay-radio">只在工作日送货</label>
+					</li>
+					<li>
+						<label for="worked" class="ralabel"><input type="radio" name="dist-time" id="worked" class="pay-radio">只在双休日、假日送货</label>
+					</li>
+					<li>
+						<label for="allTime" class="ralabel"><input type="radio" name="dist-time" id="allTime" class="pay-radio">工作日、双休日均可送货</label>
+					</li>
+				</ul>
+			</div>
+			<h2>发票信息</h2>
+			<div class="con-ct radius shadow fo-con">
+				<ul class="ct-list">
+					<li>
+						<a href="bill_info.html" class="bill">
+							<p class="size12 height23">发票类型：公司</p>
+							<p class="size12 height23">发票内容：箱包</p>
+							<p class="size12 height23">发票抬头：北京良物珍品电子商务有限公司</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<h2>订单备注</h2>
+			<div class="con-ct radius shadow fo-con">
+				<ul class="ct-list">
+					<li>
+						麻烦在11号中午之前送到，送人。
+					</li>
+				</ul>
+			</div>
+			<h2><input type="checkbox" class="yhq-inp" id="usecou" onchange="cancelCheck()"><label for="usecou">使用优惠券</label></h2>
+			<div class="con-ct radius shadow fo-con">
+				<ul class="ct-list">
+					<li>
+						<p class="size15 height23"><input type="checkbox" name="quan[]" class="yhq-inp" id="fq1" onchange="myfunction()" value="50"><label for="fq1">返券 ￥50（有效期至2014-04-30 00:00:00）</label></p>		
+						<p class="size15 height23"><input type="checkbox" name="quan[]" class="yhq-inp" id="fq2" onchange="myfunction()" value="100"><label for="fq2">返券 ￥100（有效期至2014-04-30 00:00:00）</label></p>			
+						<p class="size15 height23"><input type="checkbox" name="quan[]" class="yhq-inp" id="fq3" onchange="myfunction()" value="500"><label for="fq3">返券 ￥500（有效期至2014-04-30 00:00:00）</label></p>
+						<p class="size15 height23"><input type="radio" name="ka" class="yhq-inp" id="ka1" onchange="myfunction()" value="100"><label for="ka1">礼品卡 ￥100（有效期至2014-04-30 00:00:00）</label></p>
+						<p class="size15 height23"><input type="radio" name="ka" class="yhq-inp" id="ka2" onchange="myfunction()" value="200"><label for="ka2">礼品卡 ￥200（有效期至2014-04-30 00:00:00）</label></p>
+						<p class="size15 height23"><input type="radio" name="ka" class="yhq-inp" id="ka3" onchange="myfunction()" value="300"><label for="ka3">满减卡 ￥300（有效期至2014-04-30 00:00:00）</label></p>
+						<p><input type="text" class="voucher-num" value="" placeholder="请输入券号"></p>
+					</li>
+					<li>
+						<input type="submit" class="sub-btn btnRadius" value="激活" onclick="insertLine()">
+					</li>
+				</ul>
+			</div>
+			<script>
+				function myfunction(){
+					var samcheck = $("input[name='quan[]']:checked").val();
+					var karadio = $("input[name='ka']:checked").val();
+					var sum = 0;
+					if (samcheck  || karadio ) {
+						$("#usecou").prop("checked",true);
+						$("input[name='quan[]']").change(function(){
+							$("input[name='ka']").prop("checked",false); 
+							$("input[name='quan[]']:checked").each(function(){
+								var certsum = $(this).val();
+								sum += parseInt(certsum);
+							})
+							console.log(sum);
+						});
+						$("input[name='ka']").change(function(){
+							$("input[name='quan[]']:checked").prop("checked",false);
+							$("input[name='quan[]']:checked").each(function(){
+								var certsum = $(this).val();
+								sum += parseInt(certsum);
+							})
+							console.log(sum);
+						});
+						
+					}else{
+						$("#usecou").prop("checked",false);
+					}
+					
+
+					console.log(karadio);
+				}
+
+				function cancelCheck(){
+					$("input[name='ka']").prop("checked",false);
+					$("input[name='quan[]']:checked").prop("checked",false);
+				}
+
+				function insertLine(){
+					$("input[name='ka']").prop("checked",false);
+					$("input[name='quan[]']:checked").prop("checked",false); 
+					$("input[name='quan[]']:last").parent().after("<p class='size12 height23'><input type='checkbox' name='quan[]' onchange='myfunction()' class='yhq-inp samcheck' id='fq4'><label for='fq4'>123</label></p>"); 
+				}
+
+			</script>
+			<div class="con-ct radius shadow price-con">
+				<ul class="ct-list">
+					<li>
+						<div class="price-lef">订单总金额：</div>
+						<div class="price-rig">￥12296</div>
+					</li>
+					<li>
+						<div class="price-lef">优惠金额：</div>
+						<div class="price-rig">￥2296</div>
+					</li>
+					<li>
+						<div class="price-lef">应支付金额：</div>
+						<div class="price-rig red">￥10000</div>
+					</li>		
+				</ul>
+			</div>
+			<div class="pay-btn">
+				<a href="pay_succ.html" class="sub-btn btnRadius">提交订单</a>
+			</div>
+		</div>
+		<!--页面底部 begin-->
+		<footer>
+			<div class="f-login">
+				<a href="">登录</a>
+				<span class="fen1">|</span>
+				<a href="">注册</a>
+				<div class="l-right">
+					<a href="">反馈</a>
+					<span class="fen1">|</span>
+					<a href="">回到顶部</a>
+				</div>
+			</div>
+			<nav>  
+				<ul>
+					<li><a href="index.html"><span class="nav-home">首页</span></a></li>
+					<li><a href="cate.html"><span class="nav-classify">分类</span></a></li>
+					<li><a href="brand.html"><span class="nav-brand">品牌</span></a></li>
+					<li><a href=""><span class="nav-cart">购物袋</span></a></li>
+				</ul>
+			</nav>
+			<div class="f-section"><a href="" class="chp">触屏版</a><span class="fen2">|</span><a href="">电脑版</a><span class="fen2">|</span><a href="">微信</a></div>
+			<div class="f-section2">时尚服务热线：<span>400-009-6666</span></div>
+		</footer>
+		<!--页面底部 end-->
+	</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>分类页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="js/zepto.js"></script>
+	</head>
+	<body>
+		<a name="top"></a>
+		<header>
+			<div class="titleWrap">
+				<a href="javascript:void(0)" class="a-back">
+					<span class="cheek1">返回</span>
+				</a>
+				商品搜索
+				
+			</div>
+		</header>
+		<div class="content">
+			<div class="search">
+				<div class="search-in">
+					<input type="search">
+				</div>
+				<div class="search-bt">
+					<input type="submit" value="">
+				</div>	
+			</div>
+			<div class="category radius">
+				<ul class="category-list">
+					<li>
+						<a href="javascript:void(0)" class="category-a">
+							<p>箱包</p>
+							<p class="detailed"><span>单肩包</span><span>手提包</span><span>手拿包</span><span>化妆包</span></p>
+						</a>
+						<div class="category2-list" style="display:none;">
+							<h3>潮流女包</h3>
+							<ul>
+								<li>
+									<a href="" class="category2-a"><span class="fen3">|</span>手提包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>单肩包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>手提单肩包包</a>
+								</li>
+								<li>
+									<a href="" class="category2-a"><span class="fen3">|</span>钱/卡/钥匙包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>手拿包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>数码包</a>
+								</li>
+								<li>
+									<a href="" class="category2-a"><span class="fen3">|</span>手提包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>单肩包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>手提单肩包包</a>
+								</li>
+								<li>
+									<a href="" class="category2-a"><span class="fen3">|</span>手提包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span></a>
+									<a href="" class="category2-a"></a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="category-a">
+							<p>美妆</p>
+							<p class="detailed"><span>淡香水</span><span>化妆水</span><span>护肤套装</span><span>睫毛膏</span></p>
+						</a>
+						<div class="category2-list" style="display:none;">
+							<h3>潮流女包</h3>
+							<ul>
+								<li>
+									<a href="" class="category2-a"><span class="fen3">|</span>手提包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>单肩包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>手提单肩包包</a>
+								</li>
+								<li>
+									<a href="" class="category2-a"><span class="fen3">|</span>钱/卡/钥匙包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>手拿包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>数码包</a>
+								</li>
+								<li>
+									<a href="" class="category2-a"><span class="fen3">|</span>手提包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>单肩包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span>手提单肩包包</a>
+								</li>
+								<li>
+									<a href="" class="category2-a"><span class="fen3">|</span>手提包</a>
+									<a href="" class="category2-a"><span class="fen3">|</span></a>
+									<a href="" class="category2-a"></a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="" class="category-a">
+							<p>鞋靴</p>
+							<p class="detailed"><span>高跟鞋</span><span>平底鞋</span><span>豆豆鞋</span><span>休闲鞋</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="" class="category-a">
+							<p>箱包</p>
+							<p class="detailed"><span>单肩包</span><span>手提包</span><span>手拿包</span><span>化妆包</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="" class="category-a">
+							<p>美妆</p>
+							<p class="detailed"><span>淡香水</span><span>化妆水</span><span>护肤套装</span><span>睫毛膏</span></p>
+						</a>
+					</li>
+					<li>
+						<a href="" class="category-a">
+							<p>鞋靴</p>
+							<p class="detailed"><span>高跟鞋</span><span>平底鞋</span><span>豆豆鞋</span><span>休闲鞋</span></p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<script>
+				$(function(){
+					$(".category-a").click(function(){
+			    		var obj = $(this).parent().children().eq(1);
+			    		if(obj.css('display')=='none'){
+			    			$(".category2-list").hide();
+			    			obj.fadeIn();
+			    			$(".category-a").removeClass("category-a category-a-on").addClass("category-a");
+			    			$(this).addClass("category-a category-a-on");
+			    		}else{
+			    			obj.fadeOut();
+			    			$(".category-a").removeClass("category-a category-a-on").addClass("category-a");
+			    			$(this).removeClass("category-a category-a-on").addClass("category-a");
+			    		}
+			    	});
+
+					$(".a-back").click( function(){
+						window.history.back();
+					})
+				});
+
+			</script>
+			
+		</div>
+		<!--页面底部 begin-->
+		<footer>
+			<div class="f-login">
+				<a href="">登录</a>
+				<span class="fen1">|</span>
+				<a href="">注册</a>
+				<div class="l-right">
+					<a href="">反馈</a>
+					<span class="fen1">|</span>
+					<a href="">回到顶部</a>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href=""><span class="nav-home">首页</span></a></li>
+					<li><a href=""><span class="nav-classify">分类</span></a></li>
+					<li><a href=""><span class="nav-brand">品牌</span></a></li>
+					<li><a href=""><span class="nav-cart">购物袋</span></a></li>
+				</ul>
+			</nav>
+			<div class="f-section"><a href="" class="chp">触屏版</a><span class="fen2">|</span><a href="">电脑版</a><span class="fen2">|</span><a href="">微信</a></div>
+			<div class="f-section2">时尚服务热线：<span>400-009-6666</span></div>
+		</footer>
+		<!--页面底部 end-->
+	</body>
+</html>

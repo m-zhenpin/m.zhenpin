@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>商品详情页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/widget/slider/slider.css">
+        <link rel="stylesheet" href="css/widget/slider/slider.default.css">
+        <script type="text/javascript" src="js/zepto.js"></script>
+	    <script type="text/javascript" src="js/extend/parseTpl.js"></script>
+	    <script type="text/javascript" src="js/core/gmu.js"></script>
+	    <script type="text/javascript" src="js/core/event.js"></script>
+	    <script type="text/javascript" src="js/core/widget.js"></script>
+	    <script type="text/javascript" src="js/widget/slider/slider.js"></script>
+	    <script type="text/javascript" src="js/widget/slider/dots.js"></script>
+	    <script type="text/javascript" src="js/widget/slider/$touch.js"></script>
+	    <script type="text/javascript" src="js/widget/slider/$lazyloadimg.js"></script>
+	</head>
+	<body>
+		<a name="top"></a>
+		<header>
+			<div class="titleWrap protop">
+				<a href="javascript:void(0)" class="a-back">
+					<span class="cheek1">返回</span>
+				</a>
+				商品详情
+			</div>
+			<script>
+				$(function(){
+					$(".a-back").click( function(){
+						window.history.back();
+					})
+				});
+			</script>
+		</header>
+		<div id="product">
+			<ul class="screening shadow">
+				<li class="con"><a href="javascript:void(0)"><span>商品</span></a></li>
+				<li><a href="javascript:void(0)"><span>详情</span></a></li>
+				<li><a href="javascript:void(0)"><span>尺码</span></a></li>
+			</ul>
+			<div class="goods">
+				<div class="goods-img">
+					<div id="slider">
+						<div>
+					        <a href="javascript:void(0)"><img lazyload="image/pc04.jpg" width="175" height="260"></a>
+					    </div>
+					    <div>
+					        <a href="javascript:void(0)"><img lazyload="image/pc03.jpg" width="175" height="260"></a>
+					    </div>
+					    <div>
+					        <a href="javascript:void(0)"><img lazyload="image/pc02.jpg" width="175" height="260"></a>
+					    </div>
+					    <div>
+					        <a href="javascript:void(0)"><img lazyload="image/pc04.jpg" width="175" height="260"></a>
+					    </div>
+					</div>
+					<script>
+					    $('#slider').slider({loop:true});
+					</script>
+				</div>
+				<div class="goods-details">		
+					<div class="goods-tit">
+						<p class="bran">Prada</p>
+						<p class="infor">普拉达 红色 小牛皮 金色PRADA标识 鹿皮纹 精细手工缝合 手提单肩包 BN2579 BBE F0011</p>
+						<p class="price">珍品价：<span class="zpj">￥5290</span><span class="market">市场价：￥5600</span></p>
+					</div>
+					<div class="line"></div>
+					<div class="goods-attribute">
+						<div class="tit">颜色：</div>
+						<div class="option-cont">
+							<a href="" class="on">黑色</a>
+							<a href="">白色</a>
+							<a href="">红色</a>
+						</div>
+					</div>
+					<div class="goods-attribute">
+						<div class="tit">尺码：</div> 
+						<div class="option-cont">
+							<a href="" class="on">S</a>
+							<a href="">M</a>
+							<a href="">L</a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="goods" style="display:none;">
+				<div class="content">
+					<table class="detail">
+						<tr>
+							<td class="tdTit">品牌</td>
+							<td>Prada(普拉达)</td>
+						</tr>
+						<tr>
+							<td class="tdTit">款号</td>
+							<td>BN2579 BBE</td>
+						</tr>
+						<tr>
+							<td class="tdTit">产地</td>
+							<td>意大利</td>
+						</tr>
+						<tr>
+							<td class="tdTit">材质</td>
+							<td>外部：小牛皮 内部：小牛皮 织物 肩带：小牛皮外部：小牛皮 内部：小牛皮 织物 肩带：小牛皮外部：小牛皮 内部：小牛皮 织物 肩带：小牛皮</td>
+						</tr>
+					</table>
+					<h2>买手推荐</h2>
+					<div class="recommend radius">
+						<p>相信每个妩媚女性身边一定有一件红色单品，它几乎成了你身体的一部分，如同烈焰红唇一般时刻吸引众人的眼球这款PRADA手提单肩包，选自上等小牛皮材质，每颗铆钉，每道针脚，均在PRADA设于意大利的工作室中手工结合而成，精巧到让你无法拒绝，对于一只美好的手袋，你永远不应该改变对它的爱</p>
+						<p class="feng"></p>
+						<p>保养知识：</p>
+						<p>1、为保持皮件原有形状，请勿负荷过重，装载过多物品，并避免以重物施予压力。</p>
+						<p>2、避免让皮件接触阳光或过度潮湿的环境，并避免直接接触化妆品或香水。</p>
+						<p>3、当产品沾湿时，请以天然染色、吸收力强、平滑布料轻轻擦拭。</p>
+						<p>4、不使用时，请将皮件放置于防尘袋中。如希望更完善保护皮件，可以在内侧垫置棉纸，并将链带收纳于皮包内，方能保持原有皮革质感。</p>
+						<p>5、金属链及扣环需要以干净柔软的布擦拭，以维持其亮度。</p>
+						<p>6、定期去专业箱包保养服务机构进行保养，可维持箱包使用寿命</p>
+					</div>
+				</div>
+			</div>
+			<div class="goods" style="display:none;">
+				<div class="content">
+					<div class="size-img">
+						<img src="image/chima.jpg" width="210" height="105">
+					</div>
+				</div>
+			</div>
+			<div class="goods-btn">
+				<div class="btn-cont">
+					<div class="btn">
+						<a href="" class="paynow btnRadius">立即购买</a>
+						<a href="javascript:void(0)" class="addcart btnRadius" id="addcart"><span class="icon"></span>放入购物车</a>
+					</div>
+				</div>
+				<div class="collect"><a href="" class="btnRadius"><span class="icon"><span></span></span><span>收藏</span></a></div>
+			</div>
+		</div>
+		<div class="cart-dialog radius">
+			<div class="cart-succ">
+				<span class="succ-ico"><span></span></span>
+				<span class="succ-tex"><p>添加成功！</p><p>商品已成功加入购物袋</p></span>
+			</div>
+			<div class="cart-btn">
+				<a href="javascript:void(0)" id="stroll">再逛逛</a>
+				<a href="cart.html" id="goCart">去购物袋</a>
+			</div>
+		</div>
+		<div class="_mask"></div>
+		<div id="bigImg" style="visibility:hidden;">
+			<div id="bigSlider">
+				<div>
+			        <a href="javascript:void(0)"><img lazyload="image/pc04.jpg" width="210" height="312"></a>
+			    </div>
+			    <div>
+			        <a href="javascript:void(0)"><img lazyload="image/pc03.jpg" width="210" height="312"></a>
+			    </div>
+			    <div>
+			        <a href="javascript:void(0)"><img lazyload="image/pc02.jpg" width="210" height="312"></a>
+			    </div>
+			    <div>
+			        <a href="javascript:void(0)"><img lazyload="image/pc04.jpg" width="210" height="312"></a>
+			    </div>
+			</div>
+			<script>
+			    $('#bigSlider').slider({loop:true});
+			</script>
+		</div>
+		<script>
+			$(function(){
+				$(".screening > li").click(function(){														
+			        $(".screening > li").removeClass("con");
+			        $(this).addClass("con");
+			        $(".goods").hide();
+			        var indexgs=$(".screening > li").index(this);
+			        $(".goods").eq(indexgs).show();
+			    });
+
+				var height2 = document.body.clientHeight;
+				$("._mask").css("height",height2);
+			    $("#addcart").click(function(){
+			    	$(".cart-dialog").show();
+			    	$("._mask").show();
+			    });
+			    $("#stroll,._mask").click(function(){
+			    	$(".cart-dialog").hide();
+			    	$("._mask").hide();
+			    });
+
+			    $("#slider").click(function(){
+			    	$("#bigImg").css("visibility","visible");
+			    	$("._mask").css("background","rgba(0,0,0,0.8)").show();
+			    });
+			    $("#bigSlider,._mask").click(function(){
+			    	$("#bigImg").css("visibility","hidden");
+			    	$("._mask").hide();
+			    });
+			})
+		</script>
+
+		<!--页面底部 begin-->
+		<footer>
+			<div class="f-login">
+				<a href="">登录</a>
+				<span class="fen1">|</span>
+				<a href="">注册</a>
+				<div class="l-right">
+					<a href="">反馈</a>
+					<span class="fen1">|</span>
+					<a href="">回到顶部</a>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html"><span class="nav-home">首页</span></a></li>
+					<li><a href="cate.html"><span class="nav-classify">分类</span></a></li>
+					<li><a href="brand.html"><span class="nav-brand">品牌</span></a></li>
+					<li><a href=""><span class="nav-cart">购物袋</span></a></li>
+				</ul>
+			</nav>
+			<div class="f-section"><a href="" class="chp">触屏版</a><span class="fen2">|</span><a href="">电脑版</a><span class="fen2">|</span><a href="">微信</a></div>
+			<div class="f-section2">时尚服务热线：<span>400-009-6666</span></div>
+		</footer>
+		<!--页面底部 end-->
+	</body>
+</html>

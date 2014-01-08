@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>购物袋</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="js/zepto.js"></script>
+	</head>
+	<body>
+		<a name="top"></a>
+		<header>
+			<div class="titleWrap">
+				<a href="javascript:void(0)" class="a-back">
+					<span class="cheek1">返回</span>
+				</a>
+				购物袋
+				<a href="javascript:void(0)" class="a-screen">
+					<span class="cheek1" id="edit" value="1">编辑</span>
+				</a>				
+			</div>
+			<script>
+				$(function(){
+					$(".a-back").click( function(){
+						window.history.back();
+					})
+				});
+			</script>
+		</header>
+		<div class="content">
+			<div class="con-ct pay-tip radius shadow">
+				<ul class="ct-list">
+					<li>
+						<div class="pay-lef">金额总计：</div>
+						<div class="pay-rig red">￥<span id="totalPrice"></span></div>
+					</li>
+					<li>
+						<div class="pay-lef">商品数量：</div>
+						<div class="pay-rig"><span  id="tote"></span>件</div>
+					</li>
+				</ul>
+			</div>
+			<div class="con-ct cart-list radius shadow">
+				<ul class="ct-list">
+					<li class="glist">
+						<div class="list-img"><a href=""><img src="image/pc02.jpg" width="60" height="90"></a></div>
+						<div class="list-inf">
+							<p class="name">GUCCI</p>
+							<p class="info"><a href="">古驰 GG图案织物 棕色真皮滚边 SUKEY款 女士单肩包</a></p>
+							<p class="price">
+								<span class="pric">珍品价：<span class="red">￥<span class="goods_price" data-yprice="10">100</span></span></span>
+								<span class="number"><a href="javascript:void(0)" class="redu btn-disabled">-</a><input class="com-input" value="1" data-specid="1" readonly="readonly"><a href="javascript:void(0)" class="add">+</a></span>
+							</p>
+						</div>
+						<span class="delete"><img src="image/del.png" width="19" height="19"></span>
+					</li>
+					<li class="glist">
+						<div class="list-img"><a href=""><img src="image/pc02.jpg" width="60" height="90"></a></div>
+						<div class="list-inf">
+							<p class="name">GUCCI</p>
+							<p class="info"><a href="">古驰 GG图案织物 棕色真皮滚边 SUKEY款 女士单肩包</a></p>
+							<p class="price">
+								<span class="pric">珍品价：<span class="red">￥<span class="goods_price" data-yprice="20">200</span></span></span>
+								<span class="number"><a href="javascript:void(0)" class="redu btn-disabled">-</a><input class="com-input" value="1" data-specid="1" readonly="readonly"><a href="javascript:void(0)" class="add">+</a></span>
+							</p>
+						</div>
+						<span class="delete"><img src="image/del.png" width="19" height="19"></span>
+					</li>
+					<li class="glist">
+						<div class="list-img"><a href=""><img src="image/pc02.jpg" width="60" height="90"></a></div>
+						<div class="list-inf">
+							<p class="name">GUCCI</p>
+							<p class="info"><a href="">古驰 GG图案织物 棕色真皮滚边 SUKEY款 女士单肩包</a></p>
+							<p class="price">
+								<span class="pric">珍品价：<span class="red">￥<span class="goods_price" data-yprice="30">300</span></span></span>
+								<span class="number"><a href="javascript:void(0)" class="redu btn-disabled">-</a><input class="com-input" value="1" data-specid="1" readonly="readonly"><a href="javascript:void(0)" class="add">+</a></span>
+							</p>
+						</div>
+						<span class="delete"><img src="image/del.png" width="19" height="19"></span>
+					</li>
+					<li>
+						共优惠<span class="pre-price red">￥<span id="pre_price"></span></span>
+					</li>
+				</ul>
+			</div>
+			<div class="nogoods" style="display:none">当前购物车为空</div>
+			<div class="pay-btn"><a href="firmorder.html" class="sub-btn btnRadius">立即结算</a></div>
+		</div>
+		<script>
+
+			function updategwc(){					
+				var price_list = $(".goods_price");
+				var num_list = $(".com-input");
+				var total_num = 0;
+				var tote = 0;
+				var total_yh = 0;
+				for (i=0; i< price_list.length; i++){
+					total_num +=  price_list.eq(i).text() * num_list.eq(i).val();
+					tote += parseInt(num_list.eq(i).val());
+					total_yh += price_list.eq(i).attr("data-yprice") * num_list.eq(i).val();
+				}
+				$("#totalPrice").html(total_num);
+				$("#tote").html(tote);
+				$("#pre_price").html(total_yh);
+			};
+
+			$(function(){
+				updategwc();
+				$(".add").each(function(){  
+					$(this).click(function(){
+						var obj = $(this).parent().find(".com-input");
+						var num = obj.val();
+						var specid = obj.attr("data-specid");
+						var _this = $(this);
+						num++;
+						if (num > 3) {
+							num = 3;
+						}else{
+							$.ajax({ 
+								type: "POST", 
+								url: "http://m.zhenpin.com:8080/zpapi/cart/checkStock.json", 
+								data: 'stock='+num+'&specid='+1, 
+								success: function(e) { 
+								 	if(e.result){
+								 		obj.val(num);
+										updategwc();
+										if (num > 1) {
+											$(_this).parent().find(".redu").removeClass("btn-disabled");
+											if (num == 3) {
+												$(_this).addClass("btn-disabled");
+											};
+										}
+									}else{
+										$(_this).addClass("btn-disabled");
+								 		alert("库存不足!");
+								 		}
+									}	 
+							})
+
+						};
+						
+					})
+				});	
+
+				$(".redu").each(function(){
+					$(this).click(function(){
+						var num = $(this).parent().find(".com-input").val();
+						num--;
+						if (num < 1) {
+							num = 1;
+						}else{
+							$(this).parent().find(".com-input").val(num);
+							updategwc();
+							if (num < 3) {
+								$(this).parent().find(".add").removeClass("btn-disabled");
+								if (num == 1) {
+									console.log("123");
+									$(this).addClass("btn-disabled");
+								}		
+							}
+						};
+						
+					})
+				});
+				
+
+				$("#edit").click(function(){
+					var allowedit = $("#edit").attr("value");
+					if ( allowedit == 1 ) {
+						 $("#edit").attr("value","2");
+						 $("#edit").text("完成");
+						$("span.delete").css("display","block");
+						setTimeout(function(){$("span.delete").css("-webkit-transform","rotate(360deg)")},100)
+					}else{				
+						$("span.delete").hide();
+						$("#edit").attr("value","1");
+						$("#edit").text("编辑");
+						$("span.delete").css("-webkit-transform","rotate(0deg)");
+					};
+				});
+
+				$(".delete").each(function(){
+					$(this).click(function(){
+						var glist = $(".glist");
+						 if (confirm("确认要删除？")) {
+				            $(this).parent().remove();
+							updategwc();
+							if (glist.length == 1) {
+								$(".con-ct").hide();
+								$(".nogoods").show();
+							};
+				        }
+						
+					})
+				})
+			})
+		
+		</script>
+		<!--页面底部 begin-->
+		<footer>
+			<div class="f-login">
+				<a href="">登录</a>
+				<span class="fen1">|</span>
+				<a href="">注册</a>
+				<div class="l-right">
+					<a href="">反馈</a>
+					<span class="fen1">|</span>
+					<a href="">回到顶部</a>
+				</div>
+			</div>
+			<nav>  
+				<ul>
+					<li><a href="index.html"><span class="nav-home">首页</span></a></li>
+					<li><a href="cate.html"><span class="nav-classify">分类</span></a></li>
+					<li><a href="brand.html"><span class="nav-brand">品牌</span></a></li>
+					<li><a href=""><span class="nav-cart">购物袋</span></a></li>
+				</ul>
+			</nav>
+			<div class="f-section"><a href="" class="chp">触屏版</a><span class="fen2">|</span><a href="">电脑版</a><span class="fen2">|</span><a href="">微信</a></div>
+			<div class="f-section2">时尚服务热线：<span>400-009-6666</span></div>
+		</footer>
+		<!--页面底部 end-->
+	</body>
+</html>

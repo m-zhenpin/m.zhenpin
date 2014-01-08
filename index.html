@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>珍品网触屏版</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/widget/slider/slider.css">
+        <link rel="stylesheet" href="css/widget/slider/slider.default.css">
+        <link rel="stylesheet" type="text/css" href="css/widget/suggestion/suggestion.css" />
+        <link rel="stylesheet" type="text/css" href="css/widget/suggestion/suggestion.default.css" />
+        
+        <script type="text/javascript" src="js/zepto.js"></script>
+	    <script type="text/javascript" src="http://download.ntalker.com/t2d2/ntkfstat.js"></script>
+	</head>
+	<body>
+		<!--首页内容 begin-->
+		<div class="m-zp">
+			<header>
+				<div class="m-logo">
+					<h1><img src="image/logo.png" width="74" height="30"></h1>
+					<div class="topBtn">
+						<a href="" class="m-myzp"><span>我的珍品</span></a>
+						<a href="" class="m-cart"><span>购物车</span></a>
+					</div>
+				</div>
+			</header>
+			<!-- <div class="search">
+				<div class="search-in">
+					<input type="search">
+				</div>
+				<div class="search-bt">
+					<input type="submit" value="">
+				</div>
+			</div> -->
+			<form id="form1" action="http://www.baidu.com/s" method="get">
+			    <div class="search">
+			        <div class="search-input"><input type="text" id="input" name="wd"></div>
+			        <div class="search-button"><button class="submit">搜索</button></div>
+			    </div>
+			</form>	
+			<script type="text/javascript">
+			    (function () {
+			        $('#input').suggestion({
+			            form: '#form1',
+			            source: "http://gmu.baidu.com/demo/data/suggestion.php"
+			        })
+
+			        $('.submit').on('click', function () {
+			            $('#form1').submit();
+			        });
+			    })();
+			</script>
+
+			<div id="slider">
+				<div>
+			        <a href="acti.html"><img lazyload="image/banner1.jpg" width="300" height="150"></a>
+			    </div>
+			    <div>
+			        <a href="acti.html"><img lazyload="image/banner2.jpg" width="300" height="150"></a>
+			    </div>
+			    <div>
+			        <a href="acti.html"><img lazyload="image/banner1.jpg" width="300" height="150"></a>
+			    </div>
+			    <div>
+			        <a href="acti.html"><img lazyload="image/banner2.jpg" width="300" height="150"></a>
+			    </div>
+			</div>
+			<script>
+			    $('#slider').slider({loop:true});
+			</script>
+			
+			<div class="main-activities">
+				<a href="" class="act-01"><img src="image/pc01.jpg" width="145" height="85"></a><a href="" class="act-02"><img src="image/pc01.jpg" width="145" height="85"></a>
+			</div>
+
+			<div class="navigate borders1">
+				<a href="" class="serv1">
+					<span class="icon">
+						<span></span>
+					</span>
+					<span>商品分类</span>
+				</a><a href="" class="serv2">
+					<span class="icon">
+						<span></span>
+					</span>
+					<span>订单速查</span>
+				</a><a href="" class="serv3">
+					<span class="icon">
+						<span></span>
+					</span>
+					<span>我的收藏</span>
+				</a><a href="" class="serv4">
+					<span class="icon">
+						<span></span>
+					</span>
+					<span>我的珍品</span>
+				</a>
+			</div>
+			<h2>热门品牌</h2>
+			<div class="hotBrands borders1">
+				<div>
+					<a href="" class="bra1"><img src="image/brand01.jpg" width="53" height="33"></a>
+					<a href="" class="bra2"><img src="image/brand01.jpg" width="53" height="33"></a>
+					<a href="" class="bra3"><img src="image/brand01.jpg" width="53" height="33"></a>
+					<a href="" class="bra4"><img src="image/brand01.jpg" width="53" height="33"></a>
+				</div>
+				<div>
+					<a href="" class="bra5"><img src="image/brand01.jpg" width="53" height="33"></a>
+					<a href="" class="bra6"><img src="image/brand01.jpg" width="53" height="33"></a>
+					<a href="" class="bra7"><img src="image/brand01.jpg" width="53" height="33"></a>
+					<a href="" class="bra8"><img src="image/brand01.jpg" width="53" height="33"></a>
+				</div>
+			</div>
+			<h2>热门分类</h2>
+			<div class="hotClassify borders1">
+				<a href="cate.html" class="cla1"><span class="icon"><span></span></span><span class="name">箱包</span></a><a href="" class="cla2"><span class="icon"><span></span></span><span class="name">美妆</span></a><a href="" class="cla3"><span class="icon"><span></span></span><span class="name">鞋靴</span></a><a href="" class="cla4"><span class="icon"><span></span></span><span class="name">手表</span></a><a href="" class="cla5"><span class="icon"><span></span></span><span class="name">配饰</span></a><a href="" class="cla6"><span class="icon"><span></span></span><span class="name">服装</span></a><a href="" class="cla7"><span class="icon"><span></span></span><span class="name">儿童</span></a><a href="" class="cla8"><span class="icon"><span></span></span><span class="name">葡萄酒</span></a>
+			</div>
+			<h2>热卖单品</h2>
+			<div class="singlePro borders1">
+				<ul>
+					<li><a href="product.html"><p class="img"><img src="image/pc02.jpg" width="80" height="120"></p><p class="name">Prada</p><p class="price">￥12800</p></a></li>
+					<li><a href=""><p class="img"><img src="image/pc02.jpg" width="80" height="120"></p><p class="name">Prada</p><p class="price">￥12800</p></a></li>
+					<li><a href=""><p class="img"><img src="image/pc02.jpg" width="80" height="120"></p><p class="name">Prada</p><p class="price">￥12800</p></a></li>
+				</ul>
+			</div>
+			<script>
+				// $(document).ready(function(){
+				// 	$.getJSON('http://119.254.104.188:8080/zpapi/homePage/firstPage.json?homebannernumber=3&specialbannernumber=1&productnumber=3',function(data){
+				// 		for (i=0;i<=data.homebanner.length;i++){
+				// 			$(".singlePro ul").append("<li><a href=''><p class='img'><img src="+data.homebanner[i].imgPath+"></p></a></li>");
+				// 		}
+				// 	})
+				// })
+			</script>
+		</div>
+		<!--首页内容 begin-->
+		<!--页面底部 begin-->
+		<script>
+			NTKF_PARAM = {
+				siteid:"kf_9999",
+				settingid: "kf_9999_1375345250884"
+			};
+			function openChat(kf_id){
+				NTKF.im_openInPageChat(kf_id);
+			}
+		</script>
+		<footer style="width:320px; margin:0 auto;">
+			<div class="f-login">
+				<a href="login.html">登录</a>
+				<span class="fen1">|</span>
+				<a href="register.html">注册</a>
+				<div class="l-right">
+					<a href="">反馈</a>
+					<span class="fen1">|</span>
+					<a href="">回到顶部</a>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html"><span class="nav-home">首页</span></a></li>
+					<li><a href="cate.html"><span class="nav-classify">分类</span></a></li>
+					<li><a href="brand.html"><span class="nav-brand">品牌</span></a></li>
+					<li><a href=""><span class="nav-cart">购物袋</span></a></li>
+				</ul>
+			</nav>
+			<div class="f-section"><a href="" class="chp">触屏版</a><span class="fen2">|</span><a href="">电脑版</a><span class="fen2">|</span><a href="">微信</a></div>
+			<div class="f-section2">时尚服务热线：<span>400-009-6666</span></div>
+			<div class="openchat"><a target="_self" onclick="openChat('kf_9999_1375345250884');" class="borders1">在线时尚顾问</a></div>
+		</footer>
+		<!--页面底部 end-->
+	</body>
+</html>

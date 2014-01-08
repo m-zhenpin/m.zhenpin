@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>填写发票信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="js/zepto.js"></script>
+	</head>
+	<body>
+		<a name="top"></a>
+		<header>
+			<div class="titleWrap">
+				<a href="javascript:void(0)" class="a-back">
+					<span class="cheek1">返回</span>
+				</a>
+				填写发票信息			
+			</div>
+			<script>
+				$(function(){
+					$(".a-back").click( function(){
+						window.history.back();
+					})
+				});
+			</script>
+		</header>
+		<div class="content ptop0">
+			<h2>发票抬头</h2>
+			<div class="con-ct radius shadow fo-con">
+				<ul class="ct-list">
+					<li>
+						<input type="radio" name="bill-tit" id="personal" class="pay-radio"><label for="personal">个人</label>
+					</li>
+					<li class="unit">
+						<input type="radio" name="bill-tit" id="unit" class="pay-radio"><label for="unit">单位</label><input type="text" class="inputtext" id="unit_inp" disabled="disabled">
+					</li>
+					<li>
+						<input type="radio" name="bill-tit" id="nobill" class="pay-radio"><label for="nobill">不开发票</label>
+					</li>
+				</ul>
+			</div>
+			<script>
+				$(function(){
+					$("#unit").change(function(){
+						$("#unit_inp").removeAttr("disabled","disabled");
+					})
+					$("#personal,#nobill").change(function(){
+						$("#unit_inp").attr("disabled","disabled").val("");
+					})
+				})
+			</script>
+			<h2>发票明细</h2>
+			<div class="con-ct radius shadow fo-con">
+				<ul class="ct-list">
+					<li>
+						<input type="radio" name="bill-inf" id="luggage" class="pay-radio"><label for="luggage">箱包</label>
+					</li>
+					<li>
+						<input type="radio" name="bill-inf" id="shoesHats" class="pay-radio"><label for="shoesHats">鞋帽</label>
+					</li>
+					<li>
+						<input type="radio" name="bill-inf" id="clothing" class="pay-radio"><label for="clothing">服装</label>
+					</li>
+					<li>
+						<input type="radio" name="bill-inf" id="makeup" class="pay-radio"><label for="makeup">化妆品</label>
+					</li>
+					<li>
+						<input type="radio" name="bill-inf" id="fabric" class="pay-radio"><label for="fabric">针纺织品</label>
+					</li>
+					<li>
+						<input type="radio" name="bill-inf" id="crafts" class="pay-radio"><label for="crafts">工艺品</label>
+					</li>
+					<li>
+						<input type="radio" name="bill-inf" id="gift" class="pay-radio"><label for="gift">礼品</label>
+					</li>
+					<li>
+						<input type="radio" name="bill-inf" id="officeMate" class="pay-radio"><label for="officeMate">办公用品</label>
+					</li>
+					<li>
+						<input type="radio" name="bill-inf" id="commodity" class="pay-radio"><label for="commodity">日用品</label>
+					</li>
+				</ul>
+			</div>
+			<div class="pay-btn">
+				<a href="#" class="sub-btn btnRadius">保存</a>
+			</div>
+
+		</div>
+		<!--页面底部 begin-->
+		<footer>
+			<div class="f-login">
+				<a href="">登录</a>
+				<span class="fen1">|</span>
+				<a href="">注册</a>
+				<div class="l-right">
+					<a href="">反馈</a>
+					<span class="fen1">|</span>
+					<a href="">回到顶部</a>
+				</div>
+			</div>
+			<nav>  
+				<ul>
+					<li><a href="index.html"><span class="nav-home">首页</span></a></li>
+					<li><a href="cate.html"><span class="nav-classify">分类</span></a></li>
+					<li><a href="brand.html"><span class="nav-brand">品牌</span></a></li>
+					<li><a href=""><span class="nav-cart">购物袋</span></a></li>
+				</ul>
+			</nav>
+			<div class="f-section"><a href="" class="chp">触屏版</a><span class="fen2">|</span><a href="">电脑版</a><span class="fen2">|</span><a href="">微信</a></div>
+			<div class="f-section2">时尚服务热线：<span>400-009-6666</span></div>
+		</footer>
+		<!--页面底部 end-->
+	</body>
+</html>

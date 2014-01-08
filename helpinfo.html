@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>帮助中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="js/zepto.js"></script>
+	</head>
+	<body>
+		<a name="top"></a>
+		<header>
+			<div class="titleWrap">
+				<a href="javascript:void(0)" class="a-back">
+					<span class="cheek1">返回</span>
+				</a>
+				帮助中心			
+			</div>
+			<script>
+				$(function(){
+					$(".a-back").click( function(){
+						window.history.back();
+					})
+				});
+			</script>
+		</header>
+		<div class="content ptop0">
+			<section id="GenuineS">		
+				<h2>正品保障</h2>
+				<div class="recommend radius shadow">
+				</div>
+			</section>
+
+			<section id="ReturnS">
+				<h2>退换货说明</h2>
+				<div class="recommend radius shadow">
+				</div>
+			</section>
+			<section id="RefundS">
+				<h2>退款说明</h2>
+				<div class="recommend radius shadow">
+					<p>1、订单签收后，客户主观原因（颜色、尺码、款式偏差与喜好等）申请退换货，客户需承担退换商品的快递费，若商品订单支付方式为货到付款，另需承担货到付款手续费（银行或快递收取），具体详情联系时尚顾问（400-009-6666）；</p>
+					<p class="feng"></p>
+					<p>2、收到退回的商品，并质检合格符合退货标准之日起1-2个工作日内，货款将退回您的珍品网帐户余额，您可以通过点击“我的帐户”- “我的余额” – “提现”把余额提现到您的银行帐户（不同银行支付的款项，余额退至银行卡的时间也不一样，一般情况为3-5个工作日），提现申请成功后，可以通过“在途提现”查询提现状态。</p>
+					<p class="feng"></p>
+					<p>退款说明补充</p>
+					<p class="feng"></p>
+					<p>1、 对于有使用满减卡的订单，部分退货时，我们会判断此订单剩余的金额是否满足当初的满减卡使用条件，如不满足，会在退款中扣除当初满减卡优惠的金额；</p>
+					<p class="feng"></p>
+					<p>2、对于分期付款的订单，若退货原因是珍品网商品问题，将退还您手续费，手续费会单独退还，不计算在退款金额里；其它情况下，不退手续费（因此手续费是银行收取，不管什么原因，银行都是不退的）；</p>
+					<p class="feng"></p>
+					<p>3、若您购买商品赠送了返券，退款后，珍品网会扣回相应赠送的返券，如返券已被您使用，不足的部分会从退款中扣除；退款时会扣除购买商品获得的相应积分，如积分已被您使用，不足的部分会从返券或退款中扣除。</p>
+					<p class="feng"></p>
+				</div>
+			</section>
+			<section id="DistributionS">
+				<h2>配送范围及时间</h2>
+				<div class="recommend radius shadow">
+				</div>
+			</section>
+		</div>
+		<script>
+			$(function(){
+				var hash = window.location.hash;
+				if (hash) {
+					$(hash+"S").show();
+				};
+			})
+		</script>
+		<!--页面底部 begin-->
+		<footer>
+			<div class="f-login">
+				<a href="">登录</a>
+				<span class="fen1">|</span>
+				<a href="">注册</a>  
+				<div class="l-right">
+					<a href="">反馈</a>
+					<span class="fen1">|</span>
+					<a href="">回到顶部</a>
+				</div>
+			</div>
+			<nav>  
+				<ul>
+					<li><a href="index.html"><span class="nav-home">首页</span></a></li>
+					<li><a href="cate.html"><span class="nav-classify">分类</span></a></li>
+					<li><a href="brand.html"><span class="nav-brand">品牌</span></a></li>
+					<li><a href=""><span class="nav-cart">购物袋</span></a></li>
+				</ul>
+			</nav>
+			<div class="f-section"><a href="" class="chp">触屏版</a><span class="fen2">|</span><a href="">电脑版</a><span class="fen2">|</span><a href="">微信</a></div>
+			<div class="f-section2">时尚服务热线：<span>400-009-6666</span></div>
+		</footer>
+		<!--页面底部 end-->
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>登录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="js/zepto.js"></script>
+	</head>
+	<body>
+		<a name="top"></a>
+		<header>
+			<div class="titleWrap">
+				<a href="javascript:void(0)" class="a-back">
+					<span class="cheek1">返回</span>
+				</a>
+				登录				
+			</div>
+			<script>
+				$(function(){
+					$(".a-back").click( function(){
+						window.history.back();
+					})
+				});
+			</script>
+		</header>
+		<div class="content">
+			<div class="con-logo">
+				<img src="image/logo.png" width="110" height="45">
+			</div>
+			<p class="txt-err">您输入的帐号或密码不正确，请重新输入。</p>
+			<div class="con-ct radius shadow cont-btn">
+				<ul class="ct-list">
+					<li>
+						<div class="message"><span class="username"></span></div>
+						<input type="text" class="text" value="" placeholder="请输入用户名/邮箱">
+					</li>
+					<li>
+						<div class="message"><span class="passwd"></span></div>
+						<input type="text" class="text" value="" placeholder="请输入用户名/邮箱">
+					</li>
+					<li>
+						<input type="submit" class="sub-btn btnRadius" value="登录">
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="login-bottom">
+			<div class="fl">还没有珍品网账号？快来注册吧！</div>
+			<div class="bot-but">
+				<a href="register.html" class="btnRadius shadow">免费注册</a>
+			</div>
+		</div>
+		<!--页面底部 begin-->
+		<footer>
+			<div class="f-login">
+				<a href="">登录</a>
+				<span class="fen1">|</span>
+				<a href="">注册</a>
+				<div class="l-right">
+					<a href="">反馈</a>
+					<span class="fen1">|</span>
+					<a href="">回到顶部</a>
+				</div>
+			</div>
+			<nav>  
+				<ul>
+					<li><a href="index.html"><span class="nav-home">首页</span></a></li>
+					<li><a href="cate.html"><span class="nav-classify">分类</span></a></li>
+					<li><a href="brand.html"><span class="nav-brand">品牌</span></a></li>
+					<li><a href=""><span class="nav-cart">购物袋</span></a></li>
+				</ul>
+			</nav>
+			<div class="f-section"><a href="" class="chp">触屏版</a><span class="fen2">|</span><a href="">电脑版</a><span class="fen2">|</span><a href="">微信</a></div>
+			<div class="f-section2">时尚服务热线：<span>400-009-6666</span></div>
+		</footer>
+		<!--页面底部 end-->
+	</body>
+</html>
